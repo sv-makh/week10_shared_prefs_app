@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomDecor {
+  //дизайн для карточки формы:
+  //цвет, скругление углов и тень
   BoxDecoration cardContainerDecoration() {
     return BoxDecoration(
         color: Colors.white,
@@ -9,11 +11,14 @@ class CustomDecor {
             color: Colors.brown,
             spreadRadius: 20,
             blurRadius: 10,
+            //смещение тени вниз и вправо
             offset: Offset(20,20)
         )]
     );
   }
 
+  //дизайн для полей ввода логина и пароля:
+  //цвет, скругление углов и цвет границ
   InputDecoration textFieldInputDecoration(String hintText) {
     return InputDecoration(
       filled: true,
@@ -28,8 +33,10 @@ class CustomDecor {
     );
   }
 
-  //Icons.person для Sign In
-  //Icons.edit для Register
+  //иконка в круге сверху карточки формы
+  //Icons.person для Sign In экрана
+  //Icons.edit для Register экрана
+  //круг, тень круга, сама иконка и её тень
   Widget iconInCircle(BuildContext context, IconData icon) {
     return Container(
         decoration: const BoxDecoration(
@@ -46,6 +53,7 @@ class CustomDecor {
         ),
         width: 65.0,
         height: 65.0,
+        //преобразование иконки в текст это способ сделать тень от неё
         child: Center( child: Text(
             String.fromCharCode(icon.codePoint),
             style: TextStyle(
